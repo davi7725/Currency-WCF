@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/LibraryServer" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService1_ConvertDkkToEur_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConvertDkkToEur" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ConvertDkkToEur_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConvertDkkToEurResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetExchangeRate_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetExchangeRate" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetExchangeRate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetExchangeRateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetCurrencyInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrencyInfo" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetCurrencyInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrencyInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CalculateValue_InputMessage">
+    <wsdl:part name="parameters" element="tns:CalculateValue" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CalculateValue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CalculateValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ChangeExchangerate_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeExchangerate" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ChangeExchangerate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeExchangerateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CreateCurrency_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCurrency" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CreateCurrency_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCurrencyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHistory" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddToHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddToHistory" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddToHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddToHistoryResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService1">
+    <wsdl:operation name="ConvertDkkToEur">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ConvertDkkToEur" message="tns:IService1_ConvertDkkToEur_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ConvertDkkToEurResponse" message="tns:IService1_ConvertDkkToEur_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExchangeRate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetExchangeRate" message="tns:IService1_GetExchangeRate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetExchangeRateResponse" message="tns:IService1_GetExchangeRate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrencyInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetCurrencyInfo" message="tns:IService1_GetCurrencyInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetCurrencyInfoResponse" message="tns:IService1_GetCurrencyInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateValue">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/CalculateValue" message="tns:IService1_CalculateValue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/CalculateValueResponse" message="tns:IService1_CalculateValue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeExchangerate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ChangeExchangerate" message="tns:IService1_ChangeExchangerate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ChangeExchangerateResponse" message="tns:IService1_ChangeExchangerate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateCurrency">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/CreateCurrency" message="tns:IService1_CreateCurrency_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/CreateCurrencyResponse" message="tns:IService1_CreateCurrency_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHistory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetHistory" message="tns:IService1_GetHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetHistoryResponse" message="tns:IService1_GetHistory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddToHistory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddToHistory" message="tns:IService1_AddToHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddToHistoryResponse" message="tns:IService1_AddToHistory_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ConvertDkkToEur">
+      <soap:operation soapAction="http://tempuri.org/IService1/ConvertDkkToEur" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExchangeRate">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetExchangeRate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrencyInfo">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetCurrencyInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateValue">
+      <soap:operation soapAction="http://tempuri.org/IService1/CalculateValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeExchangerate">
+      <soap:operation soapAction="http://tempuri.org/IService1/ChangeExchangerate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateCurrency">
+      <soap:operation soapAction="http://tempuri.org/IService1/CreateCurrency" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHistory">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddToHistory">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddToHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IService1" binding="tns:BasicHttpBinding_IService1">
+      <soap:address location="http://localhost:8733/Design_Time_Addresses/LibraryServer/Service1/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
