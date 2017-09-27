@@ -33,64 +33,17 @@ namespace LibraryServer
         [OperationContract]
         History GetHistory();
 
+        [OperationContract]
+        void Lock(string iso);
+
+        [OperationContract]
+        void UnLock(string iso);
+
         // TODO: Add your service operations here
     }
 
     // Use a data contract as illustrated in the sample below to add composite types to service operations.
     // You can add XSD files into the project. After building the project, you can directly use the data types defined there, with the namespace "LibraryServer.ContractType".
-
-    [DataContract]
-    public class CurrencyRepo
-    {
-        private static CurrencyRepo instance = null;
-        public static CurrencyRepo Instance {
-            get
-            {
-                if (instance == null)
-                {
-                    instance = new CurrencyRepo();
-                }
-                return instance;
-            }
-        }
-        Dictionary<string, Currency> currencies = new Dictionary<string, Currency>();
-
-        private CurrencyRepo()
-        {
-            currencies.Add("USD", new Currency("Amerika", "USD", 5.240200));
-            currencies.Add("CAD", new Currency("Canada", "CAD", 4.922700));
-            currencies.Add("EUR", new Currency("Euro", "EUR", 7.459900));
-            currencies.Add("NOK", new Currency("Norge", "NOK", 9.03400));
-            currencies.Add("GBP", new Currency("Storbritannien", "GBP", 9.475300));
-            currencies.Add("SEK", new Currency("Sverige", "SEK", 7.82100));
-        }
-
-        public bool AddCurrency(Currency c)
-        {
-            int prevCount = currencies.Count;
-            currencies.Add(c.Name, c);
-
-            return prevCount < currencies.Count;
-        }
-
-        public bool ChangeRate(string iso, double value)
-        {
-            currencies[iso].ExchangeRate = value;
-
-            return currencies[iso].ExchangeRate == value;
-        }
-
-        public Currency[] GetInfo()
-        {
-            return currencies.Values.ToArray();
-        }
-
-        public Dictionary<string,Currency> GetDictionary()
-        {
-            return currencies;
-        }
-
-    }
 
     [DataContract]
     public class Currency
